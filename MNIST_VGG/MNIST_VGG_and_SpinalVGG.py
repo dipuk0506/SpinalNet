@@ -26,10 +26,6 @@ momentum = 0.5
 
 
 
-random_seed = 1
-torch.backends.cudnn.enabled = False
-torch.manual_seed(random_seed)
-
 train_loader = torch.utils.data.DataLoader(
   torchvision.datasets.MNIST('/files/', train=True, download=True,
                              transform=torchvision.transforms.Compose([
