@@ -22,6 +22,11 @@ The SpinalNet tries to mimic the human somatosensory system to receive large dat
 
 
 ### Universal Approximation
+
+- Single hidden layer NN of large width is a universal approximator.
+
+- If we can prove that, SpinalNet of a large depth can be equivalent to the single hidden layer NN of large width, the universal approximation is proved.
+
 Following figure presents the visual proof of the universal approximation theorem for the proposed SpinalNet. A simplified version of SpinalNet in (a) can act as a NN of a single hidden layer, drawn in (b). Similarly, a 4 layer SpinalNet in (d)can be equal to a NN of one hidden layer (HL), containing four neurons, shown in (c). 
 
 
