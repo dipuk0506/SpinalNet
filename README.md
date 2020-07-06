@@ -15,4 +15,7 @@ math.
 
 [![INSERT YOUR GRAPHIC HERE](https://github.com/dipuk0506/SpinalNet/blob/master/Human_sensory.png)]()
 
+[![INSERT YOUR GRAPHIC HERE](https://github.com/dipuk0506/SpinalNet/blob/master/SNArch2.png)]()
+
+[![INSERT YOUR GRAPHIC HERE](https://github.com/dipuk0506/SpinalNet/blob/master/UA_one_layer.png)]()
 
