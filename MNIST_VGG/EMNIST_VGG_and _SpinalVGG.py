@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jul  3 12:21:12 2020
+This Script contains the default and Spinal VGG code for EMNIST(Digits).
 
-@author: CTD Backpack
+This code trains both NNs as two different models.
+
+This code randomly changes the learning rate to get a good result.
+
+@author: Dipu
 """
 
 
