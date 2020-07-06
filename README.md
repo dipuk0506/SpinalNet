@@ -24,8 +24,16 @@ The SpinalNet tries to mimic the human somatosensory system to receive large dat
 ### Universal Approximation
 Following figure presents the visual proof of the universal approximation theorem for the proposed SpinalNet. A simplified version of SpinalNet in (a) can act as a NN of a single hidden layer, drawn in (b). Similarly, a 4 layer SpinalNet in (d)can be equal to a NN of one hidden layer (HL), containing four neurons, shown in (c). 
 
+
 <img src="https://github.com/dipuk0506/SpinalNet/blob/master/UA_one_layer.png" width="500">
+
+### SpinalNet: Second Architecture
+
+Following figure presents the structure of the second architecture (Arch2) of the SpinalNet. This structure receives flattened outputs of the original image, images after the first convolution & pooling, and images after second convolution & pooling.
+
 <img src="https://github.com/dipuk0506/SpinalNet/blob/master/SNArch2.png" width="300">
 
+### Traditional hidden layer to Spinal Hidden Layer
+<img src="https://github.com/dipuk0506/SpinalNet/blob/master/SpinalHL.png" width="500">
 
 
