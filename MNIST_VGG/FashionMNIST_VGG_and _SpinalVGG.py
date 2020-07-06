@@ -23,14 +23,9 @@ batch_size_test = 1000
 learning_rate = 0.005
 momentum = 0.5
 log_interval = 500
-first_HL =300
-max_accuracy= 0.0
 
 
 
-random_seed = 1
-torch.backends.cudnn.enabled = False
-torch.manual_seed(random_seed)
 
 train_loader = torch.utils.data.DataLoader(
   torchvision.datasets.FashionMNIST('/files/', train=True, download=True,
