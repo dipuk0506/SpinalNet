@@ -23,11 +23,6 @@ first_HL =300
 max_accuracy= 0.0
 
 
-
-random_seed = 1
-torch.backends.cudnn.enabled = False
-torch.manual_seed(random_seed)
-
 train_loader = torch.utils.data.DataLoader(
   torchvision.datasets.EMNIST('/files/', split='digits', train=True, download=True,
                              transform=torchvision.transforms.Compose([
