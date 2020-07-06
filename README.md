@@ -1,4 +1,4 @@
-# SpinalNet: SpinalNet: Deep Neural Network with Gradual Input
+# SpinalNet: Deep Neural Network with Gradual Input
 
 This repository contains scripts for training different variations of the SpinalNet and its counterparts.
 
