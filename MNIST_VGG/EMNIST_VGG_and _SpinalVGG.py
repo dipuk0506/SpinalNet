@@ -19,8 +19,7 @@ batch_size_test = 1000
 learning_rate = 0.005
 momentum = 0.5
 log_interval = 500
-first_HL =300
-max_accuracy= 0.0
+
 
 
 train_loader = torch.utils.data.DataLoader(
