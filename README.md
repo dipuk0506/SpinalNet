@@ -34,6 +34,9 @@ Following figure presents the structure of the second architecture (Arch2) of th
 <img src="https://github.com/dipuk0506/SpinalNet/blob/master/SNArch2.png" width="300">
 
 ### Traditional hidden layer to Spinal Hidden Layer
-<img src="https://github.com/dipuk0506/SpinalNet/blob/master/SpinalHL.png" width="500">
+
+Any traditional hidden layer can be converted to a spinal hidden layer. The traditional hidden layer in (a) is converted to a spinal hidden layer in (b). A spinal hidden layer has the structure of the proposed SpinalNet.
+
+<img src="https://github.com/dipuk0506/SpinalNet/blob/master/SpinalHL.png" width="400">
 
 
