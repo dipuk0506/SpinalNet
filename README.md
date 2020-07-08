@@ -52,4 +52,5 @@ Any traditional hidden layer can be converted to a spinal hidden layer. The trad
 <img src="https://github.com/dipuk0506/SpinalNet/blob/master/Spinal_Regression.png" width="500">
 
 ### Classification
-Coming Soon.
+Detailed classification results are available in the paper.
+Link to the paper:  https://arxiv.org/abs/2007.03347
