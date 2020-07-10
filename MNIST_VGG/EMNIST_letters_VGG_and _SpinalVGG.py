@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jul  3 12:21:12 2020
-
-@author: CTD Backpack
+This Script contains the default and Spinal VGG code for EMNIST(Letters).
+This code trains both NNs as two different models.
+This code randomly changes the learning rate to get a good result.
+@author: Dipu
 """
 
 
@@ -22,10 +23,6 @@ log_interval = 500
 
 
 
-
-random_seed = 1
-#torch.backends.cudnn.enabled = False
-torch.manual_seed(random_seed)
 
 train_loader = torch.utils.data.DataLoader(
   torchvision.datasets.EMNIST('/files/', split='letters', train=True, download=True,
