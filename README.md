@@ -14,6 +14,9 @@ numpy,
 random,
 math.
 
+### SOTA
+KMNIST, QMNINT, EMNIST (Digits, Letters, Balanced)
+
 ### Motivation
 The SpinalNet tries to mimic the human somatosensory system to receive large data efficiently and to achieve better performance. (a) Half part of the human somatosensory system, presenting how our spinal cord receives sensory signals from our body. (b) Structure of the proposed SpinalNet. The proposed NN consists of the input row, the intermediate row, and the output row. The intermediate row contains multiple hidden layers. Each hidden layer receives a portion of the input. All layers except the first layer also receive outputs of the previous layer. The output layer adds the weighted outputs of all hidden neurons of the intermediate row. The user can also construct and train a SpinalNet for any arbitrary number of inputs, intermediate neurons, and outputs.
 
@@ -56,4 +59,4 @@ Detailed classification results are available in the paper.
 Link to the paper:  https://arxiv.org/abs/2007.03347
 
 ### News
-The script 'EMNIST_letters_VGG_and _SpinalVGG.py' uploaded on 10th July 2020 provides 95.88% accuracy for VGG-5(Spinal FC). It is the new SOTA for the EMNIST-Letters dataset.
+The script 'EMNIST_letters_VGG_and _SpinalVGG.py' uploaded on 10th July 2020 provides 95.88% accuracy for EMNIST-Letters and 91.05% accuracy for EMNIST-Balanced datasets with VGG-5 (Spinal FC) model. It is the new SOTA for these datasets.
