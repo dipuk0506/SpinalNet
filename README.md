@@ -17,6 +17,20 @@ math.
 ### SOTA
 KMNIST, QMNINT, EMNIST (Digits, Letters, Balanced)
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/spinalnet-deep-neural-network-with-gradual/image-classification-on-emnist-balanced)](https://paperswithcode.com/sota/image-classification-on-emnist-balanced?p=spinalnet-deep-neural-network-with-gradual)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/spinalnet-deep-neural-network-with-gradual/image-classification-on-emnist-digits)](https://paperswithcode.com/sota/image-classification-on-emnist-digits?p=spinalnet-deep-neural-network-with-gradual)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/spinalnet-deep-neural-network-with-gradual/image-classification-on-emnist-letters)](https://paperswithcode.com/sota/image-classification-on-emnist-letters?p=spinalnet-deep-neural-network-with-gradual)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/spinalnet-deep-neural-network-with-gradual/image-classification-on-kuzushiji-mnist)](https://paperswithcode.com/sota/image-classification-on-kuzushiji-mnist?p=spinalnet-deep-neural-network-with-gradual)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/spinalnet-deep-neural-network-with-gradual/image-classification-on-qmnist)](https://paperswithcode.com/sota/image-classification-on-qmnist?p=spinalnet-deep-neural-network-with-gradual)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/spinalnet-deep-neural-network-with-gradual/image-classification-on-mnist)](https://paperswithcode.com/sota/image-classification-on-mnist?p=spinalnet-deep-neural-network-with-gradual)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/spinalnet-deep-neural-network-with-gradual/image-classification-on-fashion-mnist)](https://paperswithcode.com/sota/image-classification-on-fashion-mnist?p=spinalnet-deep-neural-network-with-gradual)
+
 ### Motivation
 The SpinalNet tries to mimic the human somatosensory system to receive large data efficiently and to achieve better performance. (a) Half part of the human somatosensory system, presenting how our spinal cord receives sensory signals from our body. (b) Structure of the proposed SpinalNet. The proposed NN consists of the input row, the intermediate row, and the output row. The intermediate row contains multiple hidden layers. Each hidden layer receives a portion of the input. All layers except the first layer also receive outputs of the previous layer. The output layer adds the weighted outputs of all hidden neurons of the intermediate row. The user can also construct and train a SpinalNet for any arbitrary number of inputs, intermediate neurons, and outputs.
 
