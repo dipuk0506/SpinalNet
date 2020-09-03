@@ -14,7 +14,7 @@ numpy,
 random,
 math.
 
-Scripts are independent. The user can download an individual script and run. Scripts are downloading data from PyTorch during the execution.
+Scripts are independent. The user can download an individual script and run. Except for scripts of the 'Transfer Learning' folder, scripts are downloading data from PyTorch during the execution.
 
 ### SOTA
 KMNIST, QMNINT, EMNIST (Digits, Letters, Balanced)
