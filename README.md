@@ -17,7 +17,7 @@ math.
 Scripts are independent. The user can download an individual script and run. Except for scripts of the 'Transfer Learning' folder, scripts are downloading data from PyTorch during the execution.
 
 ### SOTA
-KMNIST, QMNINT, EMNIST (Digits, Letters, Balanced)
+KMNIST, QMNINT, EMNIST (Digits, Letters, Balanced), STL-10, Bird-225, Caltech-101,Fruits-360
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/spinalnet-deep-neural-network-with-gradual/image-classification-on-emnist-balanced)](https://paperswithcode.com/sota/image-classification-on-emnist-balanced?p=spinalnet-deep-neural-network-with-gradual)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/spinalnet-deep-neural-network-with-gradual/image-classification-on-emnist-digits)](https://paperswithcode.com/sota/image-classification-on-emnist-digits?p=spinalnet-deep-neural-network-with-gradual)
