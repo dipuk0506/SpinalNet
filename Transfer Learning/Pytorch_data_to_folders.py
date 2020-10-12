@@ -19,7 +19,7 @@ data_train = torchvision.datasets.SVHN('./data', split='train', download=True,
 
 folderlocation = './data/SVHN/'
 
-for iter1 in range(10):
+for iter1 in range(10):    # 10 = number of classes
     path = folderlocation + 'train/'+str(iter1)
     if not os.path.exists(path):
         os.mkdir(path)
