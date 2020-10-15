@@ -8,11 +8,7 @@ Over the past few years, deep neural networks (DNNs) have garnered remarkable su
 
 ### Packages Used
 
-torch,
-torchvision,
-numpy,
-random,
-math.
+torch, torchvision, numpy, random, matplotlib, time, os, copy, math.
 
 Scripts are independent. The user can download an individual script and run. Except for scripts of the 'Transfer Learning' folder, scripts are downloading data from PyTorch during the execution.
 
