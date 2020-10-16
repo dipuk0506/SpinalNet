@@ -50,5 +50,7 @@ Any traditional hidden layer can be converted to a spinal hidden layer. The trad
 Detailed classification results are available in the paper.
 Link to the paper:  https://arxiv.org/abs/2007.03347
 
-### News
-The script 'EMNIST_letters_VGG_and _SpinalVGG.py' uploaded on 10th July 2020 provides 95.88% accuracy for EMNIST-Letters and 91.05% accuracy for EMNIST-Balanced datasets with VGG-5 (Spinal FC) model. It is the new SOTA for these datasets.
+### Simulation results on Kaggle:
+[1] https://www.kaggle.com/dipuk0506/spinalnet-tl-pytorch-bird225-99-5
+[2] https://www.kaggle.com/dipuk0506/spinalnet-cifar10-97-5-accuracy
+[3] https://www.kaggle.com/dipuk0506/spinalnet-fruit360-99-99-accuracy
