@@ -1,6 +1,6 @@
 '''
 
-Downloaded from https://www.kaggle.com/c/oxford-102-flower-pytorch/data
+The dataset is downloaded from https://www.kaggle.com/c/oxford-102-flower-pytorch/data
 
 Effects:
         transforms.Resize((464,464)),
