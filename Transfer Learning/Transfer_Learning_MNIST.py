@@ -1,8 +1,9 @@
-# Execution details at: https://www.kaggle.com/dipuk0506/transfer-learning-on-mnist-99-80-accuracy
-
+# Execution info: https://www.kaggle.com/dipuk0506/transfer-learning-on-mnist
 
 from __future__ import print_function, division
 
+import matplotlib
+import imageio
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -16,6 +17,63 @@ import os
 import copy
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
+
+folderlocation = './Data/'
+path = folderlocation
+if not os.path.exists(path):
+    os.mkdir(path)
+
+path = folderlocation + 'train/'
+if not os.path.exists(path):
+    os.mkdir(path)
+        
+path = folderlocation + 'valid/'
+if not os.path.exists(path):
+    os.mkdir(path)
+
+path = folderlocation + 'test/'
+if not os.path.exists(path):
+    os.mkdir(path)
+    
+for iter1 in range(10):    # 10 = number of classes
+    path = folderlocation + 'train/'+str(iter1)
+    if not os.path.exists(path):
+        os.mkdir(path)
+    path = folderlocation + 'valid/'+str(iter1)
+    if not os.path.exists(path):
+        os.mkdir(path)
+    
+    path = folderlocation + 'test/'+str(iter1)
+    if not os.path.exists(path):
+        os.mkdir(path)
+        
+data_train = torchvision.datasets.MNIST('/files/', train=True, download=True,
+                             transform=torchvision.transforms.Compose([
+                             ]))
+        
+for iter1 in range(len(data_train)):
+    x, a = data_train[iter1] 
+    if iter1%10 ==0:
+        imageio.imwrite(folderlocation + 'valid/'+str(a)+'/valid'+str(iter1)+'.png', x)
+    else:
+        imageio.imwrite(folderlocation + 'train/'+str(a)+'/train'+str(iter1)+'.png', x)
+    
+data_test = torchvision.datasets.MNIST('/files/', train=False, download=True,
+                             transform=torchvision.transforms.Compose([
+                             ]))
+
+for iter1 in range(len(data_test)):
+    x, a = data_test[iter1] 
+    imageio.imwrite(folderlocation + 'test/'+str(a)+'/test'+str(iter1)+'.png', x)
+
+model_ft = models.vgg19_bn(pretrained=True)
+num_ftrs = model_ft.classifier[0].in_features
+
+#model_ft = models.wide_resnet101_2(pretrained=True)
+#num_ftrs = model_ft.fc.in_features
+
+
 
 plt.ion()   # interactive mode
 
@@ -32,23 +90,29 @@ data_transforms = {
         transforms.ToTensor(),
         transforms.Normalize((0.1307,), (0.3081,))
     ]),
-    'val': transforms.Compose([
+    'valid': transforms.Compose([
+        transforms.Resize(112),
+        transforms.ToTensor(),
+        transforms.Normalize((0.1307,), (0.3081,))
+    ]),
+    'test': transforms.Compose([
         transforms.Resize(112),
         transforms.ToTensor(),
         transforms.Normalize((0.1307,), (0.3081,))
     ]),
 }
 
-
 data_dir = folderlocation
 image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x),
                                           data_transforms[x])
-                  for x in ['train', 'val']}
+                  for x in ['train', 'valid', 'test']}
 dataloaders = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size=128,
                                              shuffle=True, num_workers=0)
-              for x in ['train', 'val']}
-dataset_sizes = {x: len(image_datasets[x]) for x in ['train', 'val']}
+              for x in ['train', 'valid', 'test']}
+dataset_sizes = {x: len(image_datasets[x]) for x in ['train', 'valid', 'test']}
 class_names = image_datasets['train'].classes
+
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 def imshow(inp, title=None):
     """Imshow for Tensor."""
@@ -62,8 +126,7 @@ def imshow(inp, title=None):
         plt.title(title)
     plt.pause(0.001)  # pause a bit so that plots are updated
     
-    
-    # Get a batch of training data
+# Get a batch of training data
 inputs, classes = next(iter(dataloaders['train']))
 
 # Make a grid from batch
@@ -71,12 +134,6 @@ out = torchvision.utils.make_grid(inputs)
 
 imshow(out)#, title=[class_names[x] for x in classes])
 
-
-model_ft = models.vgg19_bn(pretrained=True)
-num_ftrs = model_ft.classifier[0].in_features
-
-#model_ft = models.wide_resnet101_2(pretrained=True)
-#num_ftrs = model_ft.fc.in_features
 
 half_in_size = round(num_ftrs/2)
 layer_width = 1024
@@ -119,6 +176,29 @@ class SpinalNet(nn.Module):
         return x
 
 
+class SpinalNet_Resnet(nn.Module):
+    def __init__(self):
+        super(SpinalNet_Resnet, self).__init__()
+        
+        self.layer1 = nn.Linear(half_in_size, layer_width)
+        self.layer2 = nn.Linear(half_in_size+layer_width, layer_width)
+        self.layer3 = nn.Linear(half_in_size+layer_width, layer_width)
+        self.layer4 = nn.Linear(half_in_size+layer_width, layer_width)
+        self._out = nn.Linear(layer_width*4, Num_class)
+        
+    def forward(self, x):
+        x1 = self.layer1(x[:, 0:half_in_size])
+        x2 = self.layer2(torch.cat([ x[:,half_in_size:2*half_in_size], x1], dim=1))
+        x3 = self.layer3(torch.cat([ x[:,0:half_in_size], x2], dim=1))
+        x4 = self.layer4(torch.cat([ x[:,half_in_size:2*half_in_size], x3], dim=1))
+        
+        x = torch.cat([x1, x2], dim=1)
+        x = torch.cat([x, x3], dim=1)
+        x = torch.cat([x, x4], dim=1)
+
+        x = self._out(x)
+        return x
+    
 
 net_fc = nn.Sequential(
             nn.Linear(512, 4096),
@@ -136,12 +216,24 @@ def train_model(model, criterion, optimizer, scheduler, num_epochs=25):
 
     best_model_wts = copy.deepcopy(model.state_dict())
     best_acc = 0.0
+    test_token=0
 
     for epoch in range(num_epochs):
         print('Epoch {}/{}'.format(epoch, num_epochs - 1))
- 
+        print('-' * 10)
+
         # Each epoch has a training and validation phase
-        for phase in ['train', 'val']:
+        for phase in ['train', 'valid', 'test']:
+             
+            
+            '''
+            Test when a better validation result is found
+            '''
+            if test_token ==0 and phase == 'test':
+                continue
+            test_token =0
+            
+            
             if phase == 'train':
                 model.train()  # Set model to training mode
             else:
@@ -183,13 +275,11 @@ def train_model(model, criterion, optimizer, scheduler, num_epochs=25):
                 phase, epoch_loss, epoch_acc))
 
             # deep copy the model
-            if phase == 'val' and epoch_acc > best_acc:
+            if phase == 'valid' and epoch_acc > best_acc:
                 best_acc = epoch_acc
                 best_model_wts = copy.deepcopy(model.state_dict())
-                time_elapsed = time.time() - since
-                print('Time from Start {:.0f}m {:.0f}s'.format(
-                    time_elapsed // 60, time_elapsed % 60))
-                
+                test_token =1
+
 
         print()
 
@@ -217,6 +307,7 @@ criterion = nn.CrossEntropyLoss()
 
 
 
+
 # Observe that all parameters are being optimized
 optimizer_ft = optim.SGD(model_ft.parameters(), lr=0.01, momentum=0.9)
 
@@ -225,11 +316,11 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
 
 model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler,
                        num_epochs=10)
-                       
-                       
-                       
-                       
-# Lower Learning rate: lr=0.001
+
+
+
+
+# Observe that all parameters are being optimized
 optimizer_ft = optim.SGD(model_ft.parameters(), lr=0.001, momentum=0.9)
 
 # Decay LR by a factor of 0.1 every 7 epochs
@@ -237,3 +328,22 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
 
 model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler,
                        num_epochs=10)
+
+
+
+#Save model
+
+# Specify a path
+PATH = "state_dict_model.pt"
+
+# Save
+torch.save(model_ft.state_dict(), PATH)
+
+## Load
+#model = Net()
+#model.load_state_dict(torch.load(PATH))
+#model.eval()
+
+
+import shutil
+shutil.rmtree(folderlocation)
