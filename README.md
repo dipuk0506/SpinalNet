@@ -56,3 +56,6 @@ Link to the paper:  https://arxiv.org/abs/2007.03347
 [2] https://www.kaggle.com/dipuk0506/spinalnet-cifar10-97-5-accuracy
 
 [3] https://www.kaggle.com/dipuk0506/spinalnet-fruit360-99-99-accuracy
+
+[4] https://www.kaggle.com/code/dipuk0506/stl-10-spinalnet-98-66
+
