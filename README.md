@@ -1,5 +1,6 @@
 # SpinalNet: Deep Neural Network with Gradual Input
-### Journal: IEEE Transactions on Artificial Intelligence (Accepted)
+#### Paper Link: IEEE: https://ieeexplore.ieee.org/document/9802918
+#### Paper Link: arXiv: https://arxiv.org/abs/2007.03347
 
 This repository contains scripts for training different variations of the SpinalNet and its counterparts.
 
