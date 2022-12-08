@@ -19,7 +19,7 @@ KMNIST, QMNINT, EMNIST (Digits, Letters, Balanced), STL-10, Bird-225, Caltech-10
 We develop SpinalNet by mimicking several characteristics of the human somatosensory system to receive large input efficiently and to achieve better performance. (a) How our spinal cord is connected to our body for receiving and sending sensory signals from our body. (b) Structure of the proposed SpinalNet. Each layer of the proposed NN is split into input split, intermediate split, and output split. Each intermediate split receives a portion of the input. All intermediate splits except the intermediate split of the first layer also receive outputs of the previous intermediate split. The output split adds the weighted outputs of all intermediate splits. The user can also construct and train a SpinalNet for any arbitrary number of inputs, intermediate neurons, and outputs.
 
 
-<img src="https://github.com/dipuk0506/SpinalNet/blob/master/Others/SpinalNetST.pdf" width="500">
+<img src="https://github.com/dipuk0506/SpinalNet/blob/master/Others/SpinalNet_st.png" width="500">
 
 
 ### Universal Approximation
@@ -31,7 +31,7 @@ We develop SpinalNet by mimicking several characteristics of the human somatosen
 Following figure presents the visual proof of the universal approximation theorem for the proposed SpinalNet. A simplified version of SpinalNet in (a) can act as a NN of a single hidden layer, drawn in (b). Similarly, a 4 layer SpinalNet in (d)can be equal to a NN of one hidden layer (HL), containing four neurons, shown in (c). 
 
 
-<img src="https://github.com/dipuk0506/SpinalNet/blob/master/UA_one_layer.png" width="500">
+<pdf src="https://github.com/dipuk0506/SpinalNet/blob/master/UA_one_layer.png" width="500">
 
 
 ### Traditional hidden layer to Spinal Hidden Layer
