@@ -16,7 +16,7 @@ KMNIST, QMNINT, EMNIST (Digits, Letters, Balanced), STL-10, Bird-225, Caltech-10
 
 
 ### Motivation
-The SpinalNet was developed by mimicking the human somatosensory system to receive large data efficiently and to achieve better performance. (a) Half part of the human somatosensory system, presents how our spinal cord receives sensory signals from our body. (b) Structure of the proposed SpinalNet. The proposed NN consists of the input row, the intermediate row, and the output row. The intermediate row contains multiple hidden layers. Each hidden layer receives a portion of the input. All layers except the first layer also receive outputs of the previous layer. The output layer adds the weighted outputs of all hidden neurons of the intermediate row. The user can also construct and train a SpinalNet for any arbitrary number of inputs, intermediate neurons, and outputs.
+We develop SpinalNet by mimicking several characteristics of the human somatosensory system to receive large input efficiently and to achieve better performance. (a) How our spinal cord is connected to our body for receiving and sending sensory signals from our body. (b) Structure of the proposed SpinalNet. Each layer of the proposed NN is split into input split, intermediate split, and output split. Each intermediate split receives a portion of the input. All intermediate splits except the intermediate split of the first layer also receive outputs of the previous intermediate split. The output split adds the weighted outputs of all intermediate splits. The user can also construct and train a SpinalNet for any arbitrary number of inputs, intermediate neurons, and outputs.
 
 
 <img src="https://github.com/dipuk0506/SpinalNet/blob/master/Human_sensory.png" width="500">
