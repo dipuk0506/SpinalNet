@@ -31,7 +31,7 @@ We develop SpinalNet by mimicking several characteristics of the human somatosen
 Following figure presents the visual proof of the universal approximation theorem for the proposed SpinalNet. A simplified version of SpinalNet in (a) can act as a NN of a single hidden layer, drawn in (b). Similarly, a 4 layer SpinalNet in (d)can be equal to a NN of one hidden layer (HL), containing four neurons, shown in (c). 
 
 
-<pdf src="https://github.com/dipuk0506/SpinalNet/blob/master/UA_one_layer.png" width="500">
+<img src="https://github.com/dipuk0506/SpinalNet/blob/master/UA_one_layer.png" width="500">
 
 
 ### Traditional hidden layer to Spinal Hidden Layer
