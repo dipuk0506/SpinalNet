@@ -11,7 +11,7 @@ Deep neural networks (DNNs) have achieved the state of the art performance in nu
 ### Independent Scripts
 Scripts are independent. The user can download an individual script and run. Except for scripts of the 'Transfer Learning' folder, scripts are downloading data from PyTorch during the execution.
 
-### SOTA
+### SOTA June 2020:
 KMNIST, QMNINT, EMNIST (Digits, Letters, Balanced), STL-10, Bird-225, Caltech-101, Fruits-360.
 
 
@@ -57,4 +57,12 @@ Link to the paper:  https://arxiv.org/abs/2007.03347
 [3] https://www.kaggle.com/dipuk0506/spinalnet-fruit360-99-99-accuracy
 
 [4] https://www.kaggle.com/code/dipuk0506/stl-10-spinalnet
+
+### Improvement:
+We applied SpinalNet with background class on May 2023 and received new SOTA on STL-10, CIFAR-10, CIFAR-100, Caltech-101, and CINIC-10 datasets.
+
+Scripts are available at: https://github.com/dipuk0506/UQ/tree/main/CAM
+
+
+
 
