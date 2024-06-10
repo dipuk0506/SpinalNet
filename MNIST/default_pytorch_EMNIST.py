@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 This Script contains the default EMNIST code for comparison.
 
@@ -7,11 +6,13 @@ The code is collected from:
 
 As the EMNIST needs split='digits', we make a different file for EMNIST
 
-@author: Dipu
+@author: Dipu Kabir
 """
 
-import torch
-import torchvision
+import torch, torchvision
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
 
 n_epochs = 8
 batch_size_train = 64
@@ -58,10 +59,6 @@ for i in range(6):
   plt.xticks([])
   plt.yticks([])
 fig
-
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.optim as optim
 
 
 class Net(nn.Module):
