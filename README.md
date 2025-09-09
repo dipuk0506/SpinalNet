@@ -59,7 +59,7 @@ Link to the paper:  https://arxiv.org/abs/2007.03347
 [4] https://www.kaggle.com/code/dipuk0506/stl-10-spinalnet
 
 ### Improvement:
-We applied SpinalNet with background class on May 2023 and received new SOTA on STL-10, CIFAR-10, CIFAR-100, Caltech-101, and CINIC-10 datasets.
+We applied SpinalNet with background class on May 2023 and received new SOTA on STL-10, Caltech-101, and CINIC-10 datasets.
 
 Scripts are available at: https://github.com/dipuk0506/UQ/tree/main/CAM
 
